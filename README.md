@@ -287,7 +287,7 @@ open demo/index.html
 
 ## License
 
-MIT © James Baldwin
+MIT © Jamey Baldwin
 
 ---
 
