@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="create-geocities-app">
+  <title>GeoCities Boilerplate — Live Demo — Cool Links</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="matrix-canvas"></canvas>
+<div id="matrix-hint">[M] toggle matrix</div>
+
+<div id="lightbox">
+  <span id="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption"></div>
+</div>
+
+<div id="page-wrapper">
+<table id="main-table" cellpadding="0" cellspacing="0">
+
+  <tr>
+    <td colspan="2" id="header-cell">
+      <div class="marquee-wrapper">
+        <span class="marquee-inner">
+          🔗 Webmaster's Cool Links 🔗 &nbsp;&nbsp;&nbsp;
+          The best sites on the world wide web! &nbsp;&nbsp;&nbsp;
+          ★ Last updated 2026 ★ &nbsp;&nbsp;&nbsp;
+        </span>
+      </div>
+      <h1 class="rainbow" style="margin:8px 0 4px;">GeoCities Boilerplate — Live Demo</h1>
+    </td>
+  </tr>
+
+  <tr id="content-row">
+
+    <td id="sidebar">
+      <div class="panel">
+        <div class="panel-title">📡 Navigation</div>
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="about.html" class="nav-link">👤 About Me</a>
+        <a href="gallery.html" class="nav-link">🖼️ Gallery</a>
+        <a href="guestbook.html" class="nav-link">📖 Guestbook</a>
+        <a href="links.html" class="nav-link nav-active">🔗 Cool Links</a>
+      </div>
+      <div class="panel" style="text-align:center;">
+        <div class="panel-title">🌐 Site Info</div>
+        <span class="spinning-globe">🌍</span>
+        <span id="page-clock">00:00:00</span>
+      </div>
+      <div class="panel" style="text-align:center;">
+        <div class="panel-title">🎵 Music</div>
+        <button id="music-btn" class="retro-btn" style="width:100%;font-size:0.7rem;">🎵 PLAY MUSIC</button>
+      </div>
+      <div class="panel" style="text-align:center;font-size:0.75rem;">
+        <div class="panel-title">📊 Visitors</div>
+        <div id="visitor-counter-box">
+          <div class="counter-label">You are visitor #</div>
+          <div class="counter-digits" id="counter-display"></div>
+        </div>
+      </div>
+    </td>
+
+    <td id="main-content">
+
+      <div class="panel">
+        <div class="panel-title">🔗 Cool Links Curated by Webmaster</div>
+        <p style="font-size:0.8rem;margin-bottom:6px;">
+          Here are the best websites I've found on the World Wide Web!
+          Bookmark this page — it's updated regularly!
+        </p>
+
+        <div class="links-category">🤝 Friends' Pages</div>
+
+        <div class="link-item">
+          <span class="link-bullet">►</span>
+          <div>
+            <a href="#" target="_blank" rel="noopener">CoolDude1996's Homepage</a>
+            <div class="link-desc">My best friend's site — great music section!</div>
+          </div>
+        </div>
+        <div class="link-item">
+          <span class="link-bullet">►</span>
+          <div>
+            <a href="#" target="_blank" rel="noopener">StarChild's GeoCities Page</a>
+            <div class="link-desc">Awesome anime artwork and cool GIFs</div>
+          </div>
+        </div>
+        <div class="link-item">
+          <span class="link-bullet">►</span>
+          <div>
+            <a href="#" target="_blank" rel="noopener">NetNinja42's Web Zone</a>
+            <div class="link-desc">The best tech tips on the web</div>
+          </div>
+        </div>
+
+        <div class="links-category">🎮 Games &amp; Fun</div>
+
+        <div class="link-item">
+          <span class="link-bullet">►</span>
+          <div>
+            <a href="https://archive.org/details/classicpcgames" target="_blank" rel="noopener">Classic PC Games Archive</a>
+            <div class="link-desc">Play old DOS games right in your browser!</div>
+          </div>
+        </div>
+        <div class="link-item">
+          <span class="link-bullet">►</span>
+          <div>
+            <a href="https://www.neopets.com" target="_blank" rel="noopener">Neopets</a>
+            <div class="link-desc">Virtual pets and games — still running!</div>
+          </div>
+        </div>
+
+        <div class="links-category">🖥️ Web &amp; Tech</div>
+
+        <div class="link-item">
+          <span class="link-bullet">►</span>
+          <div>
+            <a href="https://geocities.restorativland.org" target="_blank" rel="noopener">GeoCities Archive</a>
+            <div class="link-desc">Browse the original GeoCities — preserved for eternity!</div>
+          </div>
+        </div>
+        <div class="link-item">
+          <span class="link-bullet">►</span>
+          <div>
+            <a href="https://archive.org" target="_blank" rel="noopener">The Internet Archive</a>
+            <div class="link-desc">Every website ever — the Wayback Machine!</div>
+          </div>
+        </div>
+        <div class="link-item">
+          <span class="link-bullet">►</span>
+          <div>
+            <a href="https://web.dev" target="_blank" rel="noopener">Web.dev</a>
+            <div class="link-desc">Learn to build better websites (but ours is already the best)</div>
+          </div>
+        </div>
+
+        <div class="links-category">🎨 Art &amp; Creativity</div>
+
+        <div class="link-item">
+          <span class="link-bullet">►</span>
+          <div>
+            <a href="https://glitter-graphics.com" target="_blank" rel="noopener">Glitter Graphics</a>
+            <div class="link-desc">Free glitter animations for your homepage!</div>
+          </div>
+        </div>
+        <div class="link-item">
+          <span class="link-bullet">►</span>
+          <div>
+            <a href="https://gifcities.org" target="_blank" rel="noopener">GifCities</a>
+            <div class="link-desc">Search engine for classic GeoCities GIFs</div>
+          </div>
+        </div>
+
+        <div class="links-category">📰 News &amp; Info</div>
+
+        <div class="link-item">
+          <span class="link-bullet">►</span>
+          <div>
+            <a href="https://news.ycombinator.com" target="_blank" rel="noopener">Hacker News</a>
+            <div class="link-desc">Tech news and nerdy discussions</div>
+          </div>
+        </div>
+
+        <hr class="retro-divider" style="margin:12px 0;">
+
+        <div style="text-align:center;padding:8px 0;">
+          <p style="font-size:0.8rem;margin-bottom:8px;">
+            Want to swap links? Email me and I'll add your site!
+          </p>
+          <a href="mailto:Webmaster@example.com" class="retro-btn">📧 Request Link Exchange</a>
+        </div>
+
+      </div>
+
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" id="footer-cell">
+      <div class="star-divider">✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦</div>
+      <p style="font-size:0.75rem;margin:4px 0;">
+        © 2026 <strong>Webmaster</strong> — All Rights Reserved
+        &nbsp;|&nbsp; <a href="index.html">Home</a>
+      </p>
+      <p style="font-size:0.7rem;margin:4px 0;">
+        <span class="netscape-badge">Best viewed in Netscape Navigator 4.0<br>at 800×600 resolution</span>
+      </p>
+    </td>
+  </tr>
+
+</table>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

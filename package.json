@@ -1,0 +1,47 @@
+{
+  "name": "create-geocities-app",
+  "version": "1.0.0",
+  "description": "Scaffold a 1990s Geocities-themed static website in seconds",
+  "keywords": [
+    "geocities",
+    "retro",
+    "90s",
+    "website",
+    "scaffold",
+    "boilerplate",
+    "create-app",
+    "static-site",
+    "nostalgia",
+    "vintage-web"
+  ],
+  "homepage": "https://github.com/sugardaddyapp/geocities-boilerplate#readme",
+  "bugs": {
+    "url": "https://github.com/sugardaddyapp/geocities-boilerplate/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sugardaddyapp/geocities-boilerplate.git"
+  },
+  "license": "MIT",
+  "author": "Tara Ngill",
+  "bin": {
+    "create-geocities-app": "./bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "templates/"
+  ],
+  "scripts": {
+    "build:demo": "node scripts/build-demo.js",
+    "test": "node bin/cli.js test-output --yes && node -e \"require('fs').rmSync('test-output',{recursive:true,force:true})\""
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "kleur": "^4.1.5",
+    "prompts": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
