@@ -1,11 +1,11 @@
-# 🌐 create-geocities-app
+# 🌐 geocities-boilerplate
 
 > Scaffold a complete 1990s Geocities-themed static website in seconds.
 
 [![npm version](https://img.shields.io/npm/v/create-geocities-app.svg)](https://www.npmjs.com/package/create-geocities-app)
 [![npm downloads](https://img.shields.io/npm/dm/create-geocities-app.svg)](https://www.npmjs.com/package/create-geocities-app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Demo](https://img.shields.io/badge/Demo-GitHub%20Pages-blueviolet)](https://sugardaddyapp.github.io/create-geocities-app/)
+[![Demo](https://img.shields.io/badge/Demo-GitHub%20Pages-blueviolet)](https://sugardaddyapp.github.io/geocities-boilerplate/)
 
 ```
   ██████╗ ███████╗ ██████╗  ██████╗██╗████████╗██╗███████╗███████╗
@@ -15,16 +15,16 @@
  ╚██████╔╝███████╗╚██████╔╝╚██████╗██║   ██║   ██║███████╗███████║
   ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝
 
-         create-geocities-app  ✨  Welcome to 1996  ✨
+         geocities-boilerplate  ✨  Welcome to 1996  ✨
 ```
 
-**[🌐 View Live Demo](https://sugardaddyapp.github.io/create-geocities-app/)**
+**[🌐 View Live Demo](https://sugardaddyapp.github.io/geocities-boilerplate/)**
 
 ---
 
 ## What is this?
 
-`create-geocities-app` is a CLI tool that generates a fully self-contained, retro 1990s Geocities-style personal website. Think neon colors, blinking text, animated star trails, marquee banners, visitor counters, and guestbooks — all of it, generated instantly with a single command.
+`geocities-boilerplate` is a CLI tool that generates a fully self-contained, retro 1990s Geocities-style personal website. Think neon colors, blinking text, animated star trails, marquee banners, visitor counters, and guestbooks — all of it, generated instantly with a single command.
 
 The generated site is **pure static HTML, CSS, and vanilla JavaScript**. No build tools, no frameworks, no dependencies. Just open `index.html` in any browser and relive the golden age of the web.
 
@@ -42,7 +42,7 @@ Then open `my-site/index.html` in your browser. That's it!
 
 ## Demo
 
-**Live demo:** [https://sugardaddyapp.github.io/create-geocities-app/](https://sugardaddyapp.github.io/create-geocities-app/)
+**Live demo:** [https://sugardaddyapp.github.io/geocities-boilerplate/](https://sugardaddyapp.github.io/geocities-boilerplate/)
 
 The demo is generated with all options enabled (neon theme, sparkle cursor, falling stars, all 5 pages). It is automatically rebuilt and deployed to GitHub Pages on every push to `main`.
 
