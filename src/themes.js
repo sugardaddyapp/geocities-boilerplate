@@ -19,6 +19,8 @@ const themes = {
     tableBorderColor: '#00FF00',
     tableHeaderBg: '#003300',
     glowColor: '#00FF00',
+    navActiveBg: '#00FF00',
+    navActiveText: '#000000',
     name: 'Neon',
   },
   space: {
@@ -39,6 +41,8 @@ const themes = {
     tableBorderColor: '#6666FF',
     tableHeaderBg: '#000055',
     glowColor: '#6666FF',
+    navActiveBg: '#FFDD00',
+    navActiveText: '#000033',
     name: 'Space',
   },
   candy: {
@@ -59,6 +63,8 @@ const themes = {
     tableBorderColor: '#FFFFFF',
     tableHeaderBg: '#FF1493',
     glowColor: '#FFFFFF',
+    navActiveBg: '#FFFF00',
+    navActiveText: '#CC0066',
     name: 'Candy',
   },
   forest: {
@@ -79,6 +85,8 @@ const themes = {
     tableBorderColor: '#66FF66',
     tableHeaderBg: '#002200',
     glowColor: '#66FF66',
+    navActiveBg: '#FFDD00',
+    navActiveText: '#002200',
     name: 'Forest',
   },
   windows: {
@@ -99,6 +107,8 @@ const themes = {
     tableBorderColor: '#808080',
     tableHeaderBg: '#000080',
     glowColor: '#000080',
+    navActiveBg: '#000080',
+    navActiveText: '#FFFFFF',
     name: 'Windows 95',
   },
 };

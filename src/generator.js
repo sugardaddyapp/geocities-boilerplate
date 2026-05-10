@@ -71,6 +71,8 @@ async function generate(outputDir, answers) {
     TABLE_BORDER: theme.tableBorderColor,
     TABLE_HEADER_BG: theme.tableHeaderBg,
     GLOW_COLOR: theme.glowColor,
+    NAV_ACTIVE_BG: theme.navActiveBg,
+    NAV_ACTIVE_TEXT: theme.navActiveText,
     ...buildEffectFlags(answers),
     YEAR: new Date().getFullYear(),
   };

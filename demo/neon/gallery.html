@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="create-geocities-app">
+  <title>GeoCities Boilerplate — Neon Theme — Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="matrix-canvas"></canvas>
+<div id="matrix-hint">[M] toggle matrix</div>
+
+<div id="lightbox">
+  <span id="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption"></div>
+</div>
+
+<div id="page-wrapper">
+<table id="main-table" cellpadding="0" cellspacing="0">
+
+  <tr>
+    <td colspan="2" id="header-cell">
+      <div class="marquee-wrapper">
+        <span class="marquee-inner">
+          📷 Webmaster's Photo Gallery 📷 &nbsp;&nbsp;&nbsp;
+          Click any photo to enlarge! &nbsp;&nbsp;&nbsp;
+          ★ Updated 2026 ★ &nbsp;&nbsp;&nbsp;
+        </span>
+      </div>
+      <h1 class="rainbow" style="margin:8px 0 4px;">GeoCities Boilerplate — Neon Theme</h1>
+    </td>
+  </tr>
+
+  <tr id="content-row">
+
+    <td id="sidebar">
+      <div class="panel">
+        <div class="panel-title">📡 Navigation</div>
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="about.html" class="nav-link">👤 About Me</a>
+        <a href="gallery.html" class="nav-link nav-active">🖼️ Gallery</a>
+        <a href="guestbook.html" class="nav-link">📖 Guestbook</a>
+        <a href="links.html" class="nav-link">🔗 Cool Links</a>
+      </div>
+      <div class="panel" style="text-align:center;">
+        <div class="panel-title">🌐 Site Info</div>
+        <span class="spinning-globe">🌍</span>
+        <span id="page-clock">00:00:00</span>
+      </div>
+      <div class="panel" style="text-align:center;">
+        <div class="panel-title">🎵 Music</div>
+        <button id="music-btn" class="retro-btn" style="width:100%;font-size:0.7rem;">🎵 PLAY MUSIC</button>
+      </div>
+      <div class="panel" style="text-align:center;font-size:0.75rem;">
+        <div class="panel-title">📊 Visitors</div>
+        <div id="visitor-counter-box">
+          <div class="counter-label">You are visitor #</div>
+          <div class="counter-digits" id="counter-display"></div>
+        </div>
+      </div>
+      <div class="panel" style="font-size:0.75rem;">
+        <div class="panel-title">💡 Gallery Tips</div>
+        <p>Click any image to enlarge it!</p>
+        <p>Press <strong>ESC</strong> to close the viewer.</p>
+        <p>Replace placeholder images with your own photos!</p>
+      </div>
+    </td>
+
+    <td id="main-content">
+
+      <!-- Photo of the Month -->
+      <div class="photo-of-month">
+        <h2 class="neon-text" style="margin-bottom:8px;">⭐ Photo of the Month ⭐</h2>
+        <img
+          src="https://placehold.co/600x200/001100/00FF00?text=Photo+of+the+Month"
+          alt="Photo of the Month"
+          style="width:100%;height:200px;object-fit:cover;border:2px inset var(--border-dark);"
+          loading="lazy"
+        >
+        <p style="font-size:0.8rem;margin-top:6px;color:var(--accent);font-style:italic;">
+          My favourite photo this month — replace me with your own!
+        </p>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="panel">
+        <div class="panel-title">🖼️ My Photo Gallery <span class="new-badge">NEW</span></div>
+        <p style="font-size:0.75rem;margin-bottom:8px;opacity:0.8;">
+          Click any photo to enlarge. Replace the placeholder images with your own!
+        </p>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/300x120/001100/00FF00?text=Photo+1"
+              alt="Photo 1"
+              loading="lazy"
+            >
+            <div class="gallery-caption">My first photo 📷</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/300x120/000033/00FFFF?text=Photo+2"
+              alt="Photo 2"
+              loading="lazy"
+            >
+            <div class="gallery-caption">A cool moment ✨</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/300x120/330000/FF6600?text=Photo+3"
+              alt="Photo 3"
+              loading="lazy"
+            >
+            <div class="gallery-caption">Summer vibes ☀️</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/300x120/1a0033/FF00FF?text=Photo+4"
+              alt="Photo 4"
+              loading="lazy"
+            >
+            <div class="gallery-caption">Night out 🌙</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/300x120/003300/99FF99?text=Photo+5"
+              alt="Photo 5"
+              loading="lazy"
+            >
+            <div class="gallery-caption">Nature walk 🌿</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/300x120/002233/FFDD00?text=Photo+6"
+              alt="Photo 6"
+              loading="lazy"
+            >
+            <div class="gallery-caption">Favourite place 📍</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/300x120/330033/FFFF00?text=Photo+7"
+              alt="Photo 7"
+              loading="lazy"
+            >
+            <div class="gallery-caption">Random pic 🎲</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/300x120/003333/FF6600?text=Photo+8"
+              alt="Photo 8"
+              loading="lazy"
+            >
+            <div class="gallery-caption">Good times 🎉</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/300x120/1a1a00/00FF00?text=Photo+9"
+              alt="Photo 9"
+              loading="lazy"
+            >
+            <div class="gallery-caption">My workspace 💻</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">📋 How to Add Your Photos</div>
+        <p style="font-size:0.8rem;">
+          Replace the <code style="color:var(--accent);">src="https://placehold.co/..."</code>
+          URLs in <code style="color:var(--accent);">gallery.html</code> with paths to your own
+          image files. Drop your images into the site folder alongside the HTML files and reference
+          them like: <code style="color:var(--heading);">src="my-photo.jpg"</code>
+        </p>
+      </div>
+
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" id="footer-cell">
+      <div class="star-divider">✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦</div>
+      <p style="font-size:0.75rem;margin:4px 0;">
+        © 2026 <strong>Webmaster</strong> — All Rights Reserved
+        &nbsp;|&nbsp; <a href="index.html">Home</a>
+      </p>
+      <p style="font-size:0.7rem;margin:4px 0;">
+        <span class="netscape-badge">Best viewed in Netscape Navigator 4.0<br>at 800×600 resolution</span>
+      </p>
+    </td>
+  </tr>
+
+</table>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

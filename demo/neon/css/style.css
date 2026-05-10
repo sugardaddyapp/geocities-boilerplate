@@ -20,8 +20,10 @@
   --counter-bg:   #000000;
   --counter-text: #00FF00;
   --table-border: #00FF00;
-  --table-hdr:    #003300;
-  --glow:         #00FF00;
+  --table-hdr:       #003300;
+  --glow:            #00FF00;
+  --nav-active-bg:   #00FF00;
+  --nav-active-text: #000000;
 }
 
 html { scroll-behavior: smooth; }
@@ -165,8 +167,8 @@ a:visited { color: var(--accent); }
 .nav-active:visited,
 .nav-active:hover {
   border-style: inset;
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--nav-active-bg);
+  color: var(--nav-active-text);
 }
 
 /* ── Visitor Counter ── */

@@ -1,5 +1,5 @@
 /* ================================================
-   create-geocities-app — Neon Theme
+   create-geocities-app — Forest Theme
    Best viewed in Netscape Navigator 4.0 at 800x600
    ================================================ */
 
@@ -7,29 +7,31 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:           #000000;
-  --text:         #00FF00;
-  --heading:      #FFFF00;
-  --link:         #FF00FF;
-  --link-hover:   #00FFFF;
-  --accent:       #00FFFF;
-  --border-light: #00FF00;
-  --border-dark:  #003300;
-  --panel-bg:     #001100;
-  --panel-border: #00FF00;
-  --counter-bg:   #000000;
-  --counter-text: #00FF00;
-  --table-border: #00FF00;
-  --table-hdr:    #003300;
-  --glow:         #00FF00;
+  --bg:           #003300;
+  --text:         #CCFFCC;
+  --heading:      #FFDD00;
+  --link:         #99FF99;
+  --link-hover:   #FF6600;
+  --accent:       #FF6600;
+  --border-light: #66FF66;
+  --border-dark:  #001100;
+  --panel-bg:     #002200;
+  --panel-border: #66FF66;
+  --counter-bg:   #001100;
+  --counter-text: #99FF99;
+  --table-border: #66FF66;
+  --table-hdr:       #002200;
+  --glow:            #66FF66;
+  --nav-active-bg:   #FFDD00;
+  --nav-active-text: #002200;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
   background-color: var(--bg);
-  background-image: radial-gradient(circle, #001100 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-image: repeating-linear-gradient(0deg, #002200 0px, #002200 1px, #003300 1px, #003300 20px);
+  background-size: auto;
   color: var(--text);
   font-family: 'Comic Sans MS', 'Chalkboard SE', 'Courier New', Times, serif;
   font-size: 14px;
@@ -165,8 +167,8 @@ a:visited { color: var(--accent); }
 .nav-active:visited,
 .nav-active:hover {
   border-style: inset;
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--nav-active-bg);
+  color: var(--nav-active-text);
 }
 
 /* ── Visitor Counter ── */

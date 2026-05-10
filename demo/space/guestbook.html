@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="create-geocities-app">
+  <title>GeoCities Boilerplate — Space Theme — Guestbook</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="matrix-canvas"></canvas>
+<div id="matrix-hint">[M] toggle matrix</div>
+
+<div id="lightbox">
+  <span id="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption"></div>
+</div>
+
+<div id="page-wrapper">
+<table id="main-table" cellpadding="0" cellspacing="0">
+
+  <tr>
+    <td colspan="2" id="header-cell">
+      <div class="marquee-wrapper">
+        <span class="marquee-inner">
+          📖 Sign My Guestbook! 📖 &nbsp;&nbsp;&nbsp;
+          Let me know you were here! &nbsp;&nbsp;&nbsp;
+          Webmaster's Guestbook &nbsp;&nbsp;&nbsp;
+        </span>
+      </div>
+      <h1 class="rainbow" style="margin:8px 0 4px;">GeoCities Boilerplate — Space Theme</h1>
+    </td>
+  </tr>
+
+  <tr id="content-row">
+
+    <td id="sidebar">
+      <div class="panel">
+        <div class="panel-title">📡 Navigation</div>
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="about.html" class="nav-link">👤 About Me</a>
+        <a href="gallery.html" class="nav-link">🖼️ Gallery</a>
+        <a href="guestbook.html" class="nav-link nav-active">📖 Guestbook</a>
+        <a href="links.html" class="nav-link">🔗 Cool Links</a>
+      </div>
+      <div class="panel" style="text-align:center;">
+        <div class="panel-title">🌐 Site Info</div>
+        <span class="spinning-globe">🌍</span>
+        <span id="page-clock">00:00:00</span>
+      </div>
+      <div class="panel" style="text-align:center;">
+        <div class="panel-title">🎵 Music</div>
+        <button id="music-btn" class="retro-btn" style="width:100%;font-size:0.7rem;">🎵 PLAY MUSIC</button>
+      </div>
+      <div class="panel" style="text-align:center;font-size:0.75rem;">
+        <div class="panel-title">📊 Visitors</div>
+        <div id="visitor-counter-box">
+          <div class="counter-label">You are visitor #</div>
+          <div class="counter-digits" id="counter-display"></div>
+        </div>
+      </div>
+    </td>
+
+    <td id="main-content">
+
+      <!-- Sign form -->
+      <div class="panel">
+        <div class="panel-title">✍️ Sign My Guestbook!</div>
+        <p style="font-size:0.8rem;margin-bottom:10px;">
+          Thanks for visiting! Leave your mark and let me know you were here. 📖
+        </p>
+
+        <form id="guestbook-form" class="guestbook-form">
+          <label for="gb-name">Your Name / Handle *</label>
+          <input type="text" id="gb-name" name="name" placeholder="e.g. CoolSurfer99" required>
+
+          <label for="gb-email">Email (optional)</label>
+          <input type="email" id="gb-email" name="email" placeholder="your@email.com">
+
+          <label for="gb-website">Your Website (optional)</label>
+          <input type="url" id="gb-website" name="website" placeholder="http://www.your-site.com">
+
+          <label for="gb-location">Where are you from?</label>
+          <input type="text" id="gb-location" name="location" placeholder="e.g. Internet, USA">
+
+          <label for="gb-message">Your Message *</label>
+          <textarea id="gb-message" name="message" rows="4"
+            placeholder="Say hi! How did you find my site? What do you think?" required></textarea>
+
+          <div style="margin-top:6px;">
+            <button type="submit" class="retro-btn">📖 Sign Guestbook!</button>
+            &nbsp;
+            <button type="reset" class="retro-btn">🔄 Clear</button>
+          </div>
+        </form>
+
+        <div style="font-size:0.7rem;margin-top:10px;opacity:0.7;border-top:1px dashed var(--border-dark);padding-top:8px;">
+          <strong>Note:</strong> This is a static site — submissions are handled client-side only.
+          To save real entries, connect a form service like
+          <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a> or
+          <a href="https://netlify.com/products/forms" target="_blank" rel="noopener">Netlify Forms</a>.
+        </div>
+      </div>
+
+      <!-- Existing entries -->
+      <div class="panel">
+        <div class="panel-title">📜 Previous Entries</div>
+
+        <div class="guestbook-entry">
+          <span class="entry-name">🌐 WebSurfer_X</span>
+          <span class="entry-date">March 14, 1997</span>
+          <p style="margin-top:4px;font-size:0.85rem;">
+            Awesome site!! Found you through the geocities web ring.
+            Love the design, very cool!! Bookmarked! 🔖
+          </p>
+          <div style="font-size:0.7rem;opacity:0.7;">From: California, USA</div>
+        </div>
+
+        <div class="guestbook-entry">
+          <span class="entry-name">💾 NetNinja42</span>
+          <span class="entry-date">February 28, 1997</span>
+          <p style="margin-top:4px;font-size:0.85rem;">
+            Great homepage! The animated stuff is rad. Can we exchange links?
+            Check out my site too!
+          </p>
+          <div style="font-size:0.7rem;opacity:0.7;">From: The Internet</div>
+        </div>
+
+        <div class="guestbook-entry">
+          <span class="entry-name">🎮 GameMaster2000</span>
+          <span class="entry-date">January 5, 1997</span>
+          <p style="margin-top:4px;font-size:0.85rem;">
+            First!! lol. Nice page Webmaster!
+            The music is a bit much but overall VERY COOL SITE!!!
+          </p>
+          <div style="font-size:0.7rem;opacity:0.7;">From: New York, USA</div>
+        </div>
+
+        <div class="guestbook-entry">
+          <span class="entry-name">🌸 StarChild</span>
+          <span class="entry-date">December 25, 1996</span>
+          <p style="margin-top:4px;font-size:0.85rem;">
+            Merry Christmas! 🎄 Found your page totally by accident and I'm so glad I did.
+            Signing from my shiny new Pentium II!!
+          </p>
+          <div style="font-size:0.7rem;opacity:0.7;">From: Canada 🍁</div>
+        </div>
+
+      </div>
+
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" id="footer-cell">
+      <div class="star-divider">✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦</div>
+      <p style="font-size:0.75rem;margin:4px 0;">
+        © 2026 <strong>Webmaster</strong> — All Rights Reserved
+        &nbsp;|&nbsp; <a href="index.html">Home</a>
+      </p>
+      <p style="font-size:0.7rem;margin:4px 0;">
+        <span class="netscape-badge">Best viewed in Netscape Navigator 4.0<br>at 800×600 resolution</span>
+      </p>
+    </td>
+  </tr>
+
+</table>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

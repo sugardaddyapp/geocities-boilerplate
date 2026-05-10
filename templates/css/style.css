@@ -20,8 +20,10 @@
   --counter-bg:   {{COUNTER_BG}};
   --counter-text: {{COUNTER_TEXT}};
   --table-border: {{TABLE_BORDER}};
-  --table-hdr:    {{TABLE_HEADER_BG}};
-  --glow:         {{GLOW_COLOR}};
+  --table-hdr:       {{TABLE_HEADER_BG}};
+  --glow:            {{GLOW_COLOR}};
+  --nav-active-bg:   {{NAV_ACTIVE_BG}};
+  --nav-active-text: {{NAV_ACTIVE_TEXT}};
 }
 
 html { scroll-behavior: smooth; }
@@ -51,6 +53,7 @@ body {
 #main-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 #header-cell {
@@ -65,6 +68,7 @@ body {
 
 #sidebar {
   width: 170px;
+  min-width: 170px;
   padding-right: 8px;
   vertical-align: top;
 }
@@ -72,6 +76,9 @@ body {
 #main-content {
   vertical-align: top;
   padding-left: 6px;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 #footer-cell {
@@ -156,10 +163,12 @@ a:visited { color: var(--accent); }
   color: var(--bg);
   border-style: inset;
 }
-.nav-active {
+.nav-active,
+.nav-active:visited,
+.nav-active:hover {
   border-style: inset;
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--nav-active-bg);
+  color: var(--nav-active-text);
 }
 
 /* ── Visitor Counter ── */
