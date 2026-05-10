@@ -36,13 +36,16 @@ body {
   line-height: 1.5;
   min-height: 100vh;
   cursor: default;
+  overflow-x: hidden;
 }
 
 /* ── Layout ── */
 #page-wrapper {
-  width: 800px;
+  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
   padding: 8px;
+  box-sizing: border-box;
 }
 
 #main-table {
@@ -665,7 +668,7 @@ a:visited { color: var(--accent); }
   50%       { opacity: 0; }
 }
 @keyframes marquee {
-  from { transform: translateX(100vw); }
+  from { transform: translateX(100%); }
   to   { transform: translateX(-100%); }
 }
 @keyframes neonPulse {
