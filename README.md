@@ -299,4 +299,10 @@ MIT © Jamey Baldwin
 
 ---
 
+Also checkout my other projects:
+[Best Sugar Daddy Apps](https://github.com/sugardaddyapp/bestsugardaddyapps/)
+[Best Sugar Daddy Apps 2026](https://bestsugardaddyapps.com/)
+[Best Sugar Daddy Apps NPM](https://www.npmjs.com/package/best-sugar-daddy-apps)
+[Best Sugar Daddy Apps Socket](https://socket.dev/npm/package/best-sugar-daddy-apps)
+
 *Best viewed in Netscape Navigator 4.0 at 800×600 resolution.*
