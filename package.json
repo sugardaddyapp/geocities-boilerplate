@@ -12,7 +12,10 @@
     "create-app",
     "static-site",
     "nostalgia",
-    "vintage-web"
+    "vintage-web",
+    "js",
+    "css",
+    "html"
   ],
   "homepage": "https://github.com/sugardaddyapp/geocities-boilerplate#readme",
   "bugs": {
@@ -23,7 +26,7 @@
     "url": "https://github.com/sugardaddyapp/geocities-boilerplate.git"
   },
   "license": "MIT",
-  "author": "Tara Ngill",
+  "author": "Jamey Baldwin",
   "bin": {
     "create-geocities-app": "./bin/cli.js"
   },
