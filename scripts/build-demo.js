@@ -183,6 +183,8 @@ async function buildLandingPage() {
       <a href="https://github.com/sugardaddyapp/geocities-boilerplate">GitHub</a>
       &nbsp;·&nbsp;
       <a href="https://www.npmjs.com/package/create-geocities-app">npm</a>
+      &nbsp;·&nbsp;
+      <a href="https://bestsugardaddyapps.com/">Best Sugar Daddy Apps</a>
     </p>
   </footer>
 </body>
