@@ -4,3 +4,4 @@ PLAN.md
 **/my-venv
 **/dist
 **/*.egg-info
+**/target
