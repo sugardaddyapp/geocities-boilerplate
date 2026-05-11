@@ -40,6 +40,88 @@ Then open `my-site/index.html` in your browser. That's it!
 
 ---
 
+## Every Way to Run It
+
+Pick your language or runtime — all produce the same site.
+
+### Node.js / npm
+
+```bash
+# one-shot, no install
+npx create-geocities-app my-site
+
+# or install globally
+npm install -g create-geocities-app
+create-geocities-app my-site
+```
+
+### Python / PyPI
+
+```bash
+# one-shot with pipx (recommended)
+pipx run create-geocities-app my-site
+
+# or install permanently
+pip install create-geocities-app
+create-geocities-app my-site
+```
+
+### Ruby / RubyGems
+
+```bash
+gem install create-geocities-app
+create-geocities-app my-site
+```
+
+### Rust / Cargo
+
+```bash
+cargo install create-geocities-app
+create-geocities-app my-site
+```
+
+### PHP / Composer
+
+```bash
+# global install
+composer global require geocities-app/create-geocities-app
+create-geocities-app my-site
+
+# or as a project scaffold
+composer create-project geocities-app/create-geocities-app my-site
+```
+
+### Deno / JSR
+
+```bash
+# run without installing
+deno run --allow-read --allow-write jsr:@geocities/create-app my-site
+
+# or compile to a native binary first
+deno compile --allow-read --allow-write --output create-geocities-app jsr:@geocities/create-app
+./create-geocities-app my-site
+```
+
+### Go
+
+```bash
+# run without installing
+go run github.com/sugardaddyapp/geocities-boilerplate/go@latest my-site
+
+# or install the binary
+go install github.com/sugardaddyapp/geocities-boilerplate/go@latest
+create-geocities-app my-site
+```
+
+All variants accept the same flags:
+
+| Flag | Meaning |
+|------|---------|
+| `my-site` | Output directory name (default: `my-geocities-site`) |
+| `-y` / `--yes` | Skip all prompts and use defaults |
+
+---
+
 ## Demo
 
 **Live demo:** [https://sugardaddyapp.github.io/geocities-boilerplate/](https://sugardaddyapp.github.io/geocities-boilerplate/)
@@ -209,7 +291,7 @@ geocities-boilerplate/
 │   ├── generator.js       # Core: reads templates, interpolates vars, writes files
 │   ├── prompts.js         # Interactive prompts using `prompts` package
 │   └── themes.js          # 5 color palette definitions
-├── templates/             # Source templates (included in npm bundle)
+├── templates/             # Source templates (shared across all ports)
 │   ├── index.html
 │   ├── about.html
 │   ├── gallery.html
@@ -217,6 +299,12 @@ geocities-boilerplate/
 │   ├── links.html
 │   ├── css/style.css
 │   └── js/main.js
+├── python/                # PyPI package (questionary, importlib.resources)
+├── ruby/                  # RubyGems gem (tty-prompt)
+├── rust/                  # Cargo crate (dialoguer, include_dir — single binary)
+├── php/                   # Packagist/Composer package (Symfony Console)
+├── deno/                  # JSR package (TypeScript, @std/fs)
+├── go/                    # Go module (charmbracelet/huh, go:embed — single binary)
 ├── demo/                  # Pre-generated demo (not in npm bundle)
 ├── scripts/
 │   └── build-demo.js      # Regenerates demo/ with all options enabled

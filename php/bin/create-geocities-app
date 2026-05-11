@@ -1,0 +1,160 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+// Support both installed-via-composer and direct invocation
+foreach ([__DIR__ . '/../vendor/autoload.php', __DIR__ . '/../../autoload.php'] as $autoload) {
+    if (file_exists($autoload)) { require $autoload; break; }
+}
+
+use GeocitiesApp\Generator;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Question\ChoiceQuestion;
+use Symfony\Component\Console\Question\ConfirmationQuestion;
+use Symfony\Component\Console\Question\Question;
+use Symfony\Component\Console\Helper\QuestionHelper;
+
+$BANNER = <<<BANNER
+
+\033[33m  ██████╗ ███████╗ ██████╗  ██████╗██╗████████╗██╗███████╗███████╗\033[0m
+\033[33m ██╔════╝ ██╔════╝██╔═══██╗██╔════╝██║╚══██╔══╝██║██╔════╝██╔════╝\033[0m
+\033[32m ██║  ███╗█████╗  ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗\033[0m
+\033[32m ██║   ██║██╔══╝  ██║   ██║██║     ██║   ██║   ██║██╔══╝  ╚════██║\033[0m
+\033[36m ╚██████╔╝███████╗╚██████╔╝╚██████╗██║   ██║   ██║███████╗███████║\033[0m
+\033[36m  ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝\033[0m
+\033[35m         create-geocities-app  ✨  Welcome to 1996  ✨\033[0m
+
+BANNER;
+
+$command = new class($BANNER) extends Command {
+    public function __construct(private string $banner) {
+        parent::__construct('create-geocities-app');
+    }
+
+    protected function configure(): void
+    {
+        $this->setDescription('Scaffold a 1990s Geocities-themed static website')
+             ->addArgument('output', InputArgument::OPTIONAL, 'Output directory', 'my-geocities-site')
+             ->addOption('yes', 'y', InputOption::VALUE_NONE, 'Skip prompts, use defaults');
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $output->writeln($this->banner);
+
+        $outputName = $input->getArgument('output');
+        $outputDir  = getcwd() . DIRECTORY_SEPARATOR . $outputName;
+
+        $output->writeln("\033[36mCreating your site in: \033[1m{$outputDir}\033[0m\n");
+
+        if ($input->getOption('yes')) {
+            $answers = [
+                'site_name'      => 'My Geocities Site',
+                'author_name'    => 'Webmaster',
+                'theme'          => 'neon',
+                'pages'          => ['about', 'gallery', 'guestbook', 'links'],
+                'cursor_effect'  => 'sparkle',
+                'falling_effect' => 'stars',
+                'welcome_alert'  => true,
+                'play_music'     => true,
+                'fake_high_count'=> true,
+            ];
+        } else {
+            /** @var QuestionHelper $helper */
+            $helper = $this->getHelper('question');
+
+            $siteName = $helper->ask($input, $output,
+                (new Question('What is your site name? [My Awesome Homepage]: ', 'My Awesome Homepage')));
+
+            $authorName = $helper->ask($input, $output,
+                (new Question('What is your name (or handle)? [Webmaster]: ', 'Webmaster')));
+
+            $themeQ = new ChoiceQuestion('Pick a color theme:', [
+                'neon'    => 'Neon       (black bg, green + yellow + magenta)',
+                'space'   => 'Space      (dark blue, stars, gold + cyan)',
+                'candy'   => 'Candy      (hot pink bg, cyan + yellow)',
+                'forest'  => 'Forest     (dark green, gold accents)',
+                'windows' => 'Windows 95 (teal bg, grey panels)',
+            ], 'neon');
+            $themeQ->setErrorMessage('Invalid theme: %s');
+            $theme = $helper->ask($input, $output, $themeQ);
+
+            $pagesQ = new ChoiceQuestion(
+                'Which extra pages? (comma-separated numbers, e.g. 0,1,2,3)',
+                ['about' => 'About Me', 'gallery' => 'Gallery', 'guestbook' => 'Guestbook', 'links' => 'Cool Links'],
+                '0,1,2,3'
+            );
+            $pagesQ->setMultiselect(true);
+            $pages = $helper->ask($input, $output, $pagesQ);
+
+            $cursorQ = new ChoiceQuestion('Pick a cursor effect:', [
+                'sparkle'   => 'Sparkle  ✨',
+                'startrail' => 'Star Trail ★',
+                'comet'     => 'Comet ☄️',
+                'rainbow'   => 'Rainbow 🌈',
+                'none'      => 'None',
+            ], 'sparkle');
+            $cursorEffect = $helper->ask($input, $output, $cursorQ);
+
+            $fallQ = new ChoiceQuestion('Pick a falling background effect:', [
+                'stars' => 'Stars ⭐', 'snow' => 'Snow ❄️', 'none' => 'None',
+            ], 'stars');
+            $fallingEffect = $helper->ask($input, $output, $fallQ);
+
+            $welcomeAlert  = $helper->ask($input, $output,
+                new ConfirmationQuestion('Show a welcome alert on load? [Y/n]: ', true));
+            $playMusic     = $helper->ask($input, $output,
+                new ConfirmationQuestion('Auto-play retro music on load? [y/N]: ', false));
+            $fakeHighCount = $helper->ask($input, $output,
+                new ConfirmationQuestion('Start visitor counter at a high number? [Y/n]: ', true));
+
+            $answers = [
+                'site_name'      => $siteName,
+                'author_name'    => $authorName,
+                'theme'          => $theme,
+                'pages'          => $pages,
+                'cursor_effect'  => $cursorEffect,
+                'falling_effect' => $fallingEffect,
+                'welcome_alert'  => $welcomeAlert,
+                'play_music'     => $playMusic,
+                'fake_high_count'=> $fakeHighCount,
+            ];
+        }
+
+        $output->writeln("\033[33m\n⚙️  Generating files...\n\033[0m");
+        $generated = Generator::generate($outputDir, $answers);
+
+        $output->writeln("\033[32m✅ Done! Your Geocities site is ready.\n\033[0m");
+        $output->writeln("\033[37m📁 Files created:\033[0m");
+        foreach ($generated as $f) {
+            $output->writeln("\033[36m   └─ {$outputName}/{$f}\033[0m");
+        }
+        $output->writeln("\033[36m   └─ {$outputName}/css/style.css\033[0m");
+        $output->writeln("\033[36m   └─ {$outputName}/js/main.js\033[0m");
+
+        $output->writeln(<<<BOX
+
+\033[33m╔══════════════════════════════════════════════╗
+║  🌐  Open {$outputName}/index.html in        ║
+║       your browser to see your site!         ║
+║                                              ║
+║  Best viewed in Netscape Navigator 4.0       ║
+║  at 800×600 resolution. 😉                   ║
+╚══════════════════════════════════════════════╝\033[0m
+
+BOX);
+
+        return Command::SUCCESS;
+    }
+};
+
+$app = new Application('create-geocities-app', '1.0.0');
+$app->add($command);
+$app->setDefaultCommand('create-geocities-app', true);
+$app->run();

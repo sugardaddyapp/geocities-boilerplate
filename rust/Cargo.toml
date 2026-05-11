@@ -1,0 +1,24 @@
+[package]
+name = "create-geocities-app"
+version = "1.0.0"
+edition = "2021"
+description = "Scaffold a 1990s Geocities-themed static website in seconds"
+license = "MIT"
+authors = ["Jamey Baldwin"]
+homepage = "https://github.com/sugardaddyapp/geocities-boilerplate"
+repository = "https://github.com/sugardaddyapp/geocities-boilerplate"
+keywords = ["geocities", "retro", "scaffold", "static-site", "cli"]
+categories = ["command-line-utilities", "development-tools"]
+readme = "README.md"
+include = ["src/**/*", "templates/**/*", "README.md"]
+
+[[bin]]
+name = "create-geocities-app"
+path = "src/main.rs"
+
+[dependencies]
+dialoguer = "0.11"
+console = "0.15"
+include_dir = "0.7"
+regex = "1"
+chrono = "0.4"

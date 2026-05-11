@@ -1,0 +1,16 @@
+{
+  "name": "@geocities/create-app",
+  "version": "1.0.0",
+  "description": "Scaffold a 1990s Geocities-themed static website in seconds",
+  "license": "MIT",
+  "exports": "./main.ts",
+  "tasks": {
+    "run": "deno run --allow-read --allow-write main.ts",
+    "build": "deno compile --allow-read --allow-write --output create-geocities-app main.ts"
+  },
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 100,
+    "indentWidth": 2
+  }
+}

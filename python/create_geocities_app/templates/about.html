@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="create-geocities-app">
+  <title>{{SITE_NAME}} — About Me</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="matrix-canvas"></canvas>
+<div id="matrix-hint">[M] toggle matrix</div>
+
+<div id="lightbox">
+  <span id="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption"></div>
+</div>
+
+<div id="page-wrapper">
+<table id="main-table" cellpadding="0" cellspacing="0">
+
+  <tr>
+    <td colspan="2" id="header-cell">
+      <div class="marquee-wrapper">
+        <span class="marquee-inner">
+          ★ {{SITE_NAME}} ★ &nbsp;&nbsp;&nbsp; About Me Page &nbsp;&nbsp;&nbsp;
+          Learn all about {{AUTHOR_NAME}}! &nbsp;&nbsp;&nbsp;
+        </span>
+      </div>
+      <h1 class="rainbow" style="margin:8px 0 4px;">{{SITE_NAME}}</h1>
+    </td>
+  </tr>
+
+  <tr id="content-row">
+
+    <td id="sidebar">
+      <div class="panel">
+        <div class="panel-title">📡 Navigation</div>
+        {{NAV_LINKS}}
+      </div>
+      <div class="panel" style="text-align:center;">
+        <div class="panel-title">🌐 Site Info</div>
+        <span class="spinning-globe">🌍</span>
+        <span id="page-clock">00:00:00</span>
+      </div>
+      <div class="panel" style="text-align:center;">
+        <div class="panel-title">🎵 Music</div>
+        <button id="music-btn" class="retro-btn" style="width:100%;font-size:0.7rem;">🎵 PLAY MUSIC</button>
+      </div>
+      <div class="panel" style="text-align:center;font-size:0.75rem;">
+        <div class="panel-title">📊 Visitors</div>
+        <div id="visitor-counter-box">
+          <div class="counter-label">You are visitor #</div>
+          <div class="counter-digits" id="counter-display"></div>
+        </div>
+      </div>
+    </td>
+
+    <td id="main-content">
+
+      <div class="panel">
+        <div class="panel-title">👤 About {{AUTHOR_NAME}}</div>
+
+        <p>
+          Hi! I'm <strong>{{AUTHOR_NAME}}</strong> and this is my little corner of the internet.
+          I built this website entirely by hand (well, with a little help from
+          <em>create-geocities-app</em>). Welcome!
+        </p>
+
+        <div class="star-divider">✦ ✧ ✦ ✧ ✦</div>
+
+        <h2 class="neon-text">⚡ Fun Facts About Me</h2>
+        <ul class="fun-facts-list">
+          <li>I have been online since the early days of the web</li>
+          <li>My favourite browser is Netscape Navigator (obviously)</li>
+          <li>I learned HTML from a library book in 1996</li>
+          <li>I think every website needs a guestbook</li>
+          <li>I still use dial-up (just kidding… maybe)</li>
+          <li>My homepage gets at least 3 visitors per day!</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">💾 My Interests</div>
+        <div class="interests-grid">
+          <span class="interest-badge">🌐 Web Design</span>
+          <span class="interest-badge">🎮 Video Games</span>
+          <span class="interest-badge">🎵 Music</span>
+          <span class="interest-badge">🖥️ Computers</span>
+          <span class="interest-badge">📺 Anime</span>
+          <span class="interest-badge">📚 Books</span>
+          <span class="interest-badge">🎨 Art</span>
+          <span class="interest-badge">🐱 Cats</span>
+          <span class="interest-badge">☕ Coffee</span>
+          <span class="interest-badge">🚀 Space</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">🏆 Favorites</div>
+        <table class="retro-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>My Pick</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>🎵 Band</td><td>Daft Punk</td></tr>
+            <tr><td>🎬 Movie</td><td>The Matrix</td></tr>
+            <tr><td>📺 TV Show</td><td>X-Files</td></tr>
+            <tr><td>🎮 Game</td><td>StarCraft</td></tr>
+            <tr><td>🍕 Food</td><td>Pizza (obviously)</td></tr>
+            <tr><td>🌐 Website</td><td>This one!</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">📬 Get In Touch</div>
+        <p style="font-size:0.85rem;">
+          Want to chat? Have feedback about my site? Just want to say hi?
+        </p>
+        <p style="margin-top:8px;">
+          <a href="mailto:{{AUTHOR_NAME}}@example.com" class="retro-btn">📧 Send Email</a>
+          &nbsp;
+          <a href="guestbook.html" class="retro-btn">📖 Sign Guestbook</a>
+        </p>
+      </div>
+
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" id="footer-cell">
+      <div class="star-divider">✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦</div>
+      <p style="font-size:0.75rem;margin:4px 0;">
+        © {{YEAR}} <strong>{{AUTHOR_NAME}}</strong> — All Rights Reserved
+        &nbsp;|&nbsp; <a href="index.html">Home</a>
+      </p>
+      <p style="font-size:0.65rem;opacity:0.6;margin-top:6px;">
+        <a href="https://bestsugardaddyapps.com/">Best Sugar Daddy Apps</a>
+      </p>
+      <p style="font-size:0.7rem;margin:4px 0;">
+        <span class="netscape-badge">Best viewed in Netscape Navigator 4.0<br>at 800×600 resolution</span>
+      </p>
+    </td>
+  </tr>
+
+</table>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

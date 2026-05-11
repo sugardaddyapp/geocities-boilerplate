@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "create-geocities-app"
+version = "1.0.0"
+description = "Scaffold a 1990s Geocities-themed static website in seconds"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Jamey Baldwin" }]
+requires-python = ">=3.8"
+keywords = [
+  "geocities", "retro", "90s", "website", "scaffold",
+  "boilerplate", "static-site", "nostalgia", "vintage-web",
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Software Development :: Code Generators",
+]
+dependencies = [
+  "questionary>=2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/sugardaddyapp/geocities-boilerplate"
+Repository = "https://github.com/sugardaddyapp/geocities-boilerplate"
+Issues = "https://github.com/sugardaddyapp/geocities-boilerplate/issues"
+
+[project.scripts]
+create-geocities-app = "create_geocities_app.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+create_geocities_app = ["templates/**/*"]

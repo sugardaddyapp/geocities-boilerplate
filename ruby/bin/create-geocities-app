@@ -1,0 +1,133 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "optparse"
+require_relative "../lib/create_geocities_app"
+
+begin
+  require "tty-prompt"
+  require "pastel"
+rescue LoadError
+  warn "Error: tty-prompt and pastel are required. Run: gem install tty-prompt pastel"
+  exit 1
+end
+
+BANNER = <<~BANNER
+
+  \e[33m  ██████╗ ███████╗ ██████╗  ██████╗██╗████████╗██╗███████╗███████╗\e[0m
+  \e[33m ██╔════╝ ██╔════╝██╔═══██╗██╔════╝██║╚══██╔══╝██║██╔════╝██╔════╝\e[0m
+  \e[32m ██║  ███╗█████╗  ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗\e[0m
+  \e[32m ██║   ██║██╔══╝  ██║   ██║██║     ██║   ██║   ██║██╔══╝  ╚════██║\e[0m
+  \e[36m ╚██████╔╝███████╗╚██████╔╝╚██████╗██║   ██║   ██║███████╗███████║\e[0m
+  \e[36m  ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝\e[0m
+  \e[35m         create-geocities-app  ✨  Welcome to 1996  ✨\e[0m
+
+BANNER
+
+DEFAULT_ANSWERS = {
+  site_name:      "My Geocities Site",
+  author_name:    "Webmaster",
+  theme:          "neon",
+  pages:          %w[about gallery guestbook links],
+  cursor_effect:  "sparkle",
+  falling_effect: "stars",
+  welcome_alert:  true,
+  play_music:     true,
+  fake_high_count: true,
+}.freeze
+
+options = { yes: false }
+output_name = nil
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: create-geocities-app [OUTPUT_DIR] [options]"
+  opts.on("-y", "--yes", "Skip prompts and use defaults") { options[:yes] = true }
+end.parse!(ARGV)
+
+output_name = ARGV.shift || "my-geocities-site"
+output_dir  = File.expand_path(output_name, Dir.pwd)
+
+puts BANNER
+puts "\e[36mCreating your site in: \e[1m#{output_dir}\e[0m\n\n"
+
+answers = if options[:yes]
+  DEFAULT_ANSWERS
+else
+  prompt = TTY::Prompt.new
+
+  site_name = prompt.ask("What is your site name?", default: "My Awesome Homepage") do |q|
+    q.validate(->(v) { v.strip.length > 0 }, "Site name cannot be empty")
+  end
+
+  author_name = prompt.ask("What is your name (or handle)?", default: "Webmaster") do |q|
+    q.validate(->(v) { v.strip.length > 0 }, "Name cannot be empty")
+  end
+
+  theme = prompt.select("Pick a color theme:") do |menu|
+    menu.choice "Neon       (black bg, green + yellow + magenta)", "neon"
+    menu.choice "Space      (dark blue, stars, gold + cyan)",       "space"
+    menu.choice "Candy      (hot pink bg, cyan + yellow)",          "candy"
+    menu.choice "Forest     (dark green, gold accents)",            "forest"
+    menu.choice "Windows 95 (teal bg, grey panels)",               "windows"
+  end
+
+  pages = prompt.multi_select("Which extra pages do you want?") do |menu|
+    menu.default 1, 2, 3, 4
+    menu.choice "About Me",   "about"
+    menu.choice "Gallery",    "gallery"
+    menu.choice "Guestbook",  "guestbook"
+    menu.choice "Cool Links", "links"
+  end
+
+  cursor_effect = prompt.select("Pick a cursor effect:") do |menu|
+    menu.choice "Sparkle  ✨ (glitter dots spawn at cursor)", "sparkle"
+    menu.choice "Star Trail ★ (stars follow and fade)",        "startrail"
+    menu.choice "Comet    ☄️  (colored streak trail)",         "comet"
+    menu.choice "Rainbow  🌈 (hue-cycling dot trail)",         "rainbow"
+    menu.choice "None        (no cursor effect)",               "none"
+  end
+
+  falling_effect = prompt.select("Pick a falling background effect:") do |menu|
+    menu.choice "Stars  ⭐ (white dots fall from top)", "stars"
+    menu.choice "Snow   ❄️  (snowflakes drift down)",   "snow"
+    menu.choice "None     (no falling effect)",          "none"
+  end
+
+  welcome_alert  = prompt.yes?("Show a welcome alert when the page loads?")
+  play_music     = prompt.yes?("Auto-play a retro 8-bit music jingle on load?", default: false)
+  fake_high_count = prompt.yes?("Start visitor counter at a high number (looks popular!)?")
+
+  {
+    site_name:      site_name,
+    author_name:    author_name,
+    theme:          theme,
+    pages:          pages,
+    cursor_effect:  cursor_effect,
+    falling_effect: falling_effect,
+    welcome_alert:  welcome_alert,
+    play_music:     play_music,
+    fake_high_count: fake_high_count,
+  }
+end
+
+puts "\e[33m\n⚙️  Generating files...\n\n\e[0m"
+
+generated = CreateGeocitiesApp.generate(output_dir, answers)
+
+puts "\e[32m✅ Done! Your Geocities site is ready.\n\e[0m"
+puts "\e[37m📁 Files created:\e[0m"
+generated.each { |f| puts "\e[36m   └─ #{output_name}/#{f}\e[0m" }
+puts "\e[36m   └─ #{output_name}/css/style.css\e[0m"
+puts "\e[36m   └─ #{output_name}/js/main.js\e[0m"
+
+puts <<~BOX
+
+  \e[33m╔══════════════════════════════════════════════╗
+  ║  🌐  Open #{output_name}/index.html in        ║
+  ║       your browser to see your site!         ║
+  ║                                              ║
+  ║  Best viewed in Netscape Navigator 4.0       ║
+  ║  at 800×600 resolution. 😉                   ║
+  ╚══════════════════════════════════════════════╝\e[0m
+
+BOX

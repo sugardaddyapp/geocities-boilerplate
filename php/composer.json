@@ -1,0 +1,27 @@
+{
+    "name": "geocities-app/create-geocities-app",
+    "description": "Scaffold a 1990s Geocities-themed static website in seconds",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {"name": "Jamey Baldwin"}
+    ],
+    "keywords": ["geocities", "retro", "90s", "scaffold", "static-site", "cli"],
+    "homepage": "https://github.com/sugardaddyapp/geocities-boilerplate",
+    "require": {
+        "php": ">=8.0",
+        "symfony/console": "^6.0|^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "GeocitiesApp\\": "src/"
+        }
+    },
+    "bin": ["bin/create-geocities-app"],
+    "scripts": {
+        "create": "php bin/create-geocities-app"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
