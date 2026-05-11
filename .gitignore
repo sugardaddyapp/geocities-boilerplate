@@ -1,3 +1,6 @@
 node_modules
 PLAN.md
 **/.DS_Store
+**/my-venv
+**/dist
+**/*.egg-info
