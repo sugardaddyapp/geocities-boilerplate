@@ -5,3 +5,4 @@ PLAN.md
 **/dist
 **/*.egg-info
 **/target
+**/*.gem
